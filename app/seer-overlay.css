@@ -1,27 +1,14 @@
-/* Keep the heroine in a foreground layer so page sections cannot cut across her. */
-.seer-stage {
-  position: fixed;
-  right: max(-2.5vw, 0px);
-  bottom: -1px;
-  width: clamp(430px, 46vw, 720px);
-  z-index: 30;
-  pointer-events: none;
-  transform-origin: 50% 100%;
-  filter: drop-shadow(0 0 24px rgba(214, 166, 57, .18));
+/* Use the original complete scene as one continuous backdrop to avoid a portrait cut line. */
+.cosmic-art {
+  background-image: url('/lumina-scene.jpg');
+  background-position: center top;
+  background-size: cover;
+  opacity: .66;
+  transform-origin: 73% 42%;
+  animation: scene-breathe 9s ease-in-out infinite alternate;
 }
-.seer-stage img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 88vh;
-  object-fit: contain;
-  object-position: bottom right;
+.seer-stage { display: none !important; }
+@keyframes scene-breathe {
+  from { transform: scale(1); }
+  to { transform: scale(1.025); }
 }
-@media (max-width: 800px) {
-  .seer-stage { width: 50vw; right: -7vw; opacity: .72; }
-}
-@media (max-width: 560px) {
-  .seer-stage { width: 64vw; right: -13vw; opacity: .5; }
-}
-.seer-stage{animation:seer-breathe 5.4s ease-in-out infinite;will-change:auto}
-@keyframes seer-breathe{0%,100%{bottom:-1px}50%{bottom:3px}}
