@@ -7,18 +7,19 @@
   transform-origin: 72% 42%;
   animation: sky-breathe 18s ease-in-out infinite alternate;
 }
-.seer-stage {
-  position: fixed;
+.home-seer {
+  position: absolute;
   right: max(-2.5vw, 0px);
-  bottom: -1px;
+  top: 190px;
+  bottom: auto;
   width: clamp(430px, 46vw, 720px);
-  z-index: 1;
+  z-index: 0;
   pointer-events: none;
   transform-origin: 75% 100%;
   filter: drop-shadow(0 0 24px rgba(214, 166, 57, .22));
   animation: seer-breathe 5.4s ease-in-out infinite alternate;
 }
-.seer-stage img {
+.home-seer img {
   display: block;
   width: 100%;
   height: auto;
@@ -41,8 +42,8 @@
   to { transform: translateX(15%) translateY(-8%); }
 }
 @media (max-width: 800px) {
-  .seer-stage { width: clamp(300px, 52vw, 600px); right: -7vw; opacity: .78; }
+  .home-seer { width: clamp(300px, 52vw, 600px); right: -7vw; top: 160px; opacity: .78; }
 }
 @media (max-width: 560px) {
-  .seer-stage { width: 64vw; right: -13vw; opacity: .58; }
+  .home-seer { width: 64vw; right: -13vw; top: 145px; opacity: .58; }
 }

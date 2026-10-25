@@ -12,6 +12,6 @@ export function CosmicBackground() {
       <div className="cloud-banks cloud-bank-a" />
       <div className="cloud-banks cloud-bank-b" />
     </div>
-    <div className="seer-stage" aria-hidden="true"><img src="/lumina-seer-extracted.png" alt="" /></div>
+    
   </>;
 }
