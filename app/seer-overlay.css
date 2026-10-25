@@ -1,16 +1,38 @@
-/* One continuous artwork keeps the heroine and scene joined while both move. */
+/* Separate transparent heroine over the animated sky plate. */
 .cosmic-art {
-  background-image: url('/lumina-scene.jpg');
-  background-position: center top;
+  background-image: url('/lumina-sky.png');
+  background-position: center 38%;
   background-size: cover;
-  opacity: .66;
-  transform-origin: 73% 42%;
-  animation: scene-breathe 6s ease-in-out infinite alternate;
+  opacity: .86;
+  transform-origin: 72% 42%;
+  animation: sky-breathe 18s ease-in-out infinite alternate;
 }
-.seer-stage { display: none !important; }
-@keyframes scene-breathe {
-  from { transform: scale(1) translate3d(0, 0, 0); }
-  to { transform: scale(1.11) translate3d(-1.3%, .8%, 0); }
+.seer-stage {
+  position: fixed;
+  right: max(-2.5vw, 0px);
+  bottom: -1px;
+  width: clamp(430px, 46vw, 720px);
+  z-index: 30;
+  pointer-events: none;
+  transform-origin: 75% 100%;
+  filter: drop-shadow(0 0 24px rgba(214, 166, 57, .22));
+  animation: seer-breathe 5.4s ease-in-out infinite alternate;
+}
+.seer-stage img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 88vh;
+  object-fit: contain;
+  object-position: bottom right;
+}
+@keyframes sky-breathe {
+  from { transform: scale(1); }
+  to { transform: scale(1.035); }
+}
+@keyframes seer-breathe {
+  from { transform: translateY(0) scale(1); }
+  to { transform: translateY(-7px) scale(1.014); }
 }
 .cloud-banks { opacity: .34; filter: blur(15px); animation-duration: 14s; }
 .cloud-bank-b { opacity: .24; animation-duration: 19s; animation-direction: alternate-reverse; }
@@ -18,33 +40,9 @@
   from { transform: translateX(-15%) translateY(7%); }
   to { transform: translateX(15%) translateY(-8%); }
 }
-.scene-blink {
-  position: absolute;
-  left: 72.5%;
-  top: 34%;
-  width: 7.5%;
-  height: 1.5%;
-  pointer-events: none;
-}
-.scene-blink::before, .scene-blink::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  width: 31%;
-  height: 100%;
-  border-radius: 0 0 60% 60%;
-  background: #39241f;
-  transform: scaleY(0);
-  transform-origin: center;
-  animation: scene-blink 4.2s infinite;
-}
-.scene-blink::before { left: 8%; }
-.scene-blink::after { right: 4%; animation-delay: .025s; }
-@keyframes scene-blink {
-  0%, 74%, 79%, 100% { transform: scaleY(0); }
-  76%, 77% { transform: scaleY(1); }
-}
 @media (max-width: 800px) {
-  .cosmic-art { background-position: center top; }
-  .scene-blink { left: 82%; top: 23.5%; width: 10%; height: 1.35%; }
+  .seer-stage { width: clamp(300px, 52vw, 600px); right: -7vw; opacity: .78; }
+}
+@media (max-width: 560px) {
+  .seer-stage { width: 64vw; right: -13vw; opacity: .58; }
 }
