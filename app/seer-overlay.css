@@ -23,3 +23,5 @@
 @media (max-width: 560px) {
   .seer-stage { width: 64vw; right: -13vw; opacity: .5; }
 }
+.seer-stage{animation:seer-breathe 5.4s ease-in-out infinite;will-change:auto}
+@keyframes seer-breathe{0%,100%{bottom:-1px}50%{bottom:3px}}

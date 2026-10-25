@@ -16,10 +16,10 @@ export function CosmicBackground() {
       <div className="cloud-banks cloud-bank-a" />
       <div className="cloud-banks cloud-bank-b" />
     </div>
-    <motion.div className="seer-stage" aria-hidden="true" animate={{ y: [0, -5, 0], scaleY: [1, 1.008, 1] }} transition={{ duration: 5.4, repeat: Infinity, ease: 'easeInOut' }}>
+    <div className="seer-stage" aria-hidden="true">
       <img src="/lumina-seer.png" alt="" />
       <i className="seer-blink" />
       {readingRoutes.includes(path) && <motion.div className="seer-offer-card" initial={{ opacity: 0, y: 12, scale: .85 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ duration: .65 }}><img src="/card-back.svg" alt="" /></motion.div>}
-    </motion.div>
+    </div>
   </>;
 }
