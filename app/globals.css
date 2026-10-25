@@ -9,5 +9,4 @@
 /* Use the shared fixed cosmic backdrop on every route. */
 .home-backdrop{display:none}
 
-/* Keep the sky artwork full-size behind the app on every route. */
-.app-main{background-image:radial-gradient(ellipse at 65% 2%,rgba(50,37,76,.22),transparent 42%),linear-gradient(130deg,rgba(5,10,30,.38),rgba(11,18,42,.24) 55%,rgba(16,17,43,.38)),url('/lumina-sky.jpg');background-size:auto,auto,cover;background-position:center,center,center 38%;background-repeat:no-repeat;background-attachment:fixed}
+/* Shared sky art lives in the fixed cosmic backdrop; keep page panels translucent. */
