@@ -1,0 +1,4 @@
+import {NextResponse} from 'next/server';
+import {tarotCards} from '../../data/tarotCards';
+export async function POST(request:Request){let body:unknown;try{body=await request.json()}catch{return NextResponse.json({error:'Send a valid JSON question.'},{status:400})}const question=typeof (body as {question?:unknown})?.question==='string'?(body as {question:string}).question.trim():'';if(!question||question.length>500)return NextResponse.json({error:'Your question must be between 1 and 500 characters.'},{status:400});const card=tarotCards[Math.floor(Math.random()*tarotCards.length)];return NextResponse.json({card:card.name,reading:`${card.name} appears as a gentle guide for your question. ${card.meanings.daily} As you reflect, ask yourself what one small, grounded action would help you honor this insight. Tarot offers a perspective for reflection; your choices remain your own.`})}
+
