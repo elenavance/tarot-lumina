@@ -4,7 +4,7 @@ const stars = Array.from({ length: 68 }, (_, i) => ({ left: `${(i * 37 + 9) % 10
 
 export function CosmicBackground() {
   return <div className="cosmic-backdrop" aria-hidden="true">
-    <div className="cosmic-art" />
+    <div className="cosmic-art"><i className="scene-blink" /></div>
     <div className="moon-aura" />
     <div className="star-field">{stars.map((s, i) => <i key={i} style={{ left: s.left, top: s.top, animationDelay: s.delay, animationDuration: s.duration, width: s.size, height: s.size }} />)}</div>
     <div className="shooting-stars"><i /><i /><i /></div>

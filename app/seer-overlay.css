@@ -1,14 +1,50 @@
-/* Use the original complete scene as one continuous backdrop to avoid a portrait cut line. */
+/* One continuous artwork keeps the heroine and scene joined while both move. */
 .cosmic-art {
   background-image: url('/lumina-scene.jpg');
   background-position: center top;
   background-size: cover;
   opacity: .66;
   transform-origin: 73% 42%;
-  animation: scene-breathe 9s ease-in-out infinite alternate;
+  animation: scene-breathe 8s ease-in-out infinite alternate;
 }
 .seer-stage { display: none !important; }
 @keyframes scene-breathe {
-  from { transform: scale(1); }
-  to { transform: scale(1.025); }
+  from { transform: scale(1) translate3d(0, 0, 0); }
+  to { transform: scale(1.065) translate3d(-.8%, .6%, 0); }
+}
+.cloud-banks { opacity: .3; filter: blur(16px); animation-duration: 28s; }
+.cloud-bank-b { opacity: .22; animation-duration: 39s; }
+@keyframes cloud-drift {
+  from { transform: translateX(-8%) translateY(4%); }
+  to { transform: translateX(8%) translateY(-5%); }
+}
+.scene-blink {
+  position: absolute;
+  left: 72.5%;
+  top: 34%;
+  width: 7.5%;
+  height: 1.5%;
+  pointer-events: none;
+}
+.scene-blink::before, .scene-blink::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 31%;
+  height: 100%;
+  border-radius: 0 0 60% 60%;
+  background: #39241f;
+  transform: scaleY(0);
+  transform-origin: center;
+  animation: scene-blink 7s infinite;
+}
+.scene-blink::before { left: 8%; }
+.scene-blink::after { right: 4%; animation-delay: .025s; }
+@keyframes scene-blink {
+  0%, 90%, 94%, 100% { transform: scaleY(0); }
+  92%, 93% { transform: scaleY(1); }
+}
+@media (max-width: 800px) {
+  .cosmic-art { background-position: center top; }
+  .scene-blink { left: 82%; top: 23.5%; width: 10%; height: 1.35%; }
 }
