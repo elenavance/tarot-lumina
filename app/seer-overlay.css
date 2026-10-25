@@ -1,0 +1,25 @@
+/* Keep the heroine in a foreground layer so page sections cannot cut across her. */
+.seer-stage {
+  position: fixed;
+  right: max(-2.5vw, 0px);
+  bottom: -1px;
+  width: clamp(430px, 46vw, 720px);
+  z-index: 3;
+  pointer-events: none;
+  transform-origin: 50% 100%;
+  filter: drop-shadow(0 0 24px rgba(214, 166, 57, .18));
+}
+.seer-stage img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 88vh;
+  object-fit: contain;
+  object-position: bottom right;
+}
+@media (max-width: 800px) {
+  .seer-stage { width: 50vw; right: -7vw; opacity: .72; }
+}
+@media (max-width: 560px) {
+  .seer-stage { width: 64vw; right: -13vw; opacity: .5; }
+}
