@@ -12,7 +12,7 @@
   right: max(-2.5vw, 0px);
   bottom: -1px;
   width: clamp(430px, 46vw, 720px);
-  z-index: 30;
+  z-index: 1;
   pointer-events: none;
   transform-origin: 75% 100%;
   filter: drop-shadow(0 0 24px rgba(214, 166, 57, .22));
