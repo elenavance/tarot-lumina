@@ -4,7 +4,7 @@
   right: max(-2.5vw, 0px);
   bottom: -1px;
   width: clamp(430px, 46vw, 720px);
-  z-index: 3;
+  z-index: 30;
   pointer-events: none;
   transform-origin: 50% 100%;
   filter: drop-shadow(0 0 24px rgba(214, 166, 57, .18));
