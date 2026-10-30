@@ -1,0 +1,19 @@
+{
+  "id": "/",
+  "name": "LUMINA — Tarot & Life Guidance",
+  "short_name": "LUMINA",
+  "description": "A quiet space for tarot reflection and personal guidance.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#070c24",
+  "theme_color": "#10132e",
+  "icons": [
+    {
+      "src": "/icons/lumina-app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
