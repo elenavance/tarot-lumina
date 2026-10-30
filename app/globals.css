@@ -10,3 +10,15 @@
 .home-backdrop{display:none}
 
 /* Shared sky art lives in the fixed cosmic backdrop; keep page panels translucent. */
+
+
+/* Honor the operating system's reduced-motion preference. */
+@media (prefers-reduced-motion: reduce) {
+  html, body { scroll-behavior: auto !important; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
